@@ -1,0 +1,57 @@
+# .inputrc
+# see "READLINE" in bash(1) or https://ss64.com/bash/syntax-inputrc.html
+
+# to reload in-place, to C-x C-r
+
+# do not bell on tab-completion
+set bell-style none
+
+set input-meta on
+set convert-meta off
+set output-meta on
+
+$if mode=emacs
+
+# for Linux console and RH/Debian xterm
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[7~": beginning-of-line
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# for rxvt
+"\e[8~": end-of-line
+
+# for non RH/Debian xterm, can't hurt for RH/Debian xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for FreeBSD console
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+$endif
+
+# need these for the next few items
+set enable-meta-key on
+set convert-meta on
+
+# Press Control-x, then " to start a quoted insertion.
+"\C-x\"":"\"\"\C-b"
+
+# Use Alt-s to prepend the previous command with sudo.
+"\M-s":"\C-p\C-asudo \C-e"
+
+# Make space expand history substitution in bash.
+# enabling magic-space breaks using space in interactive Python
+# Space: magic-space
+
+# need to turn convert-meta back off here in order to enable stuff like C-S-u to input unicode chars
+set convert-meta off

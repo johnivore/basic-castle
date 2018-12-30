@@ -1,0 +1,18 @@
+[core]
+    pager = /usr/share/git/diff-highlight/diff-highlight | less -rx1,5
+
+[push]
+    default = simple
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    required = true
+
+[color]
+    interactive = true
+    branch = true
+    status = true
+
+[alias]
+    ci = commit
