@@ -1,10 +1,11 @@
 # basic-castle
 
-Minimalist dotfiles for use with homeshick.
+Minimalist dotfiles for use with `homeshick`.
+
 
 ## Setup
 
-Copy bootstrap.sh to the remote system and run it.
+Copy `bootstrap.sh` to the remote system and run it.
 
 ```
 wget https://gitlab.com/johnivore/basic-castle/raw/master/bootstrap.sh
@@ -18,6 +19,7 @@ sh bootstrap.sh
 If this is an Android system:
 
     homeshick clone https://gitlab.com/johnivore/android-castle.git
+
 
 ## Usage
 
