@@ -55,13 +55,16 @@ for option in autocd globstar; do
 done
 
 # prefer neovim; else vim; else vi
-export EDITOR='vi'
-export VISUAL='vi'
 if [ -x "$(command -v nvim)" ]; then
     alias vi='nvim'
+    export EDITOR=nvim
 elif [ -x "$(command -v vim)" ]; then
     alias vi='vim'
+    export EDITOR=vim
+else
+    export EDITOR=vi
 fi
+export VISUAL=$EDITOR
 
 # symlink vimrc to neovim config
 if [[ ! -e ~/.config/nvim/init.vim ]]; then
