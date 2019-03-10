@@ -3,7 +3,7 @@
 # It's stupid to maintain both .bashrc and .bash_profile,
 # so everything is in here.
 
-# $HOME/.bash-local.sh can contain stuff not in git
+# $HOME/.bash-local.sh can contain stuff not in git, or in another git repo
 for file in {/etc/profile,/etc/bashrc,$HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh},/usr/bin/virtualenvwrapper.sh,/usr/share/fzf/{key-bindings.bash,completion.bash}}; do
     if [[ -f "$file" ]]; then
         # echo "sourcing $file"
