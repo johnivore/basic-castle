@@ -33,7 +33,8 @@ appendpath '$HOME/bin'
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-export TERM=screen-256color
+export COLORTERM=truecolor
+export TERM=xterm-256color
 
 # history
 export HISTSIZE=10000
