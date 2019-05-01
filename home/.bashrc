@@ -33,8 +33,9 @@ appendpath '$HOME/bin'
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-export COLORTERM=truecolor
-export TERM=xterm-256color
+# normally you don't want to set this stuff
+# export COLORTERM=truecolor
+# export TERM=xterm-256color
 
 # history
 export HISTSIZE=10000
@@ -309,7 +310,7 @@ tre() {
 
 # simple function to send myself a file
 mailmethis() {
-    echo "Here is the file I Requested." | mail -a "$@" -s "Requested file" `whoami`
+    echo "Here is the file I requested." | mail -a "$@" -s "Requested file" `whoami`
 }
 
 # colors in man
