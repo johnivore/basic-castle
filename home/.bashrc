@@ -186,6 +186,11 @@ else
     alias sshagent='eval `ssh-agent -s` && ssh-add'
 fi
 
+# git pager
+if [[ -e /usr/share/git/diff-highlight/diff-highlight ]]; then
+    export GIT_PAGER='/usr/share/git/diff-highlight/diff-highlight | less -rx1,5'
+fi
+
 
 # --- prompt ---
 
@@ -213,7 +218,6 @@ else
     GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
     source ~/.bash-git-prompt/gitprompt.sh
 fi
-
 
 # --- cleanup ---
 unset HAVE_COLORFUL_GREP
