@@ -33,9 +33,8 @@ appendpath '$HOME/bin'
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# normally you don't want to set this stuff
-# export COLORTERM=truecolor
-# export TERM=xterm-256color
+# work around old versions of tmux not dealing with termite
+[[ $TERM == xterm-termite ]] && export TERM=xterm
 
 # history
 export HISTSIZE=10000
