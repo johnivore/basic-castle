@@ -137,7 +137,7 @@ alias timer='echo "Timer started; stop with Ctrl-D." && date && time cat && date
 # 'tmux -2' to start in 256-color mode
 # older versions of tmux can't use the -style options, and >= 2.9 must use them
 if (( $(echo "`tmux -V | cut -d ' ' -f 2 | sed 's/[^0-9\.]*//g'` <= 2.1" | bc -l) )); then
-    alias tmux='tmux -2 -f ~/.tmux-pre2.9.conf'
+    alias tmux='tmux -2 -f ~/.tmux-pre2.1.conf'
 else
     alias tmux='tmux -2'
 fi
