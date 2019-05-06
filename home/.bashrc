@@ -116,8 +116,6 @@ alias dusdot='du -sk * .[a-zA-Z0-9]* | sort -n'
 alias dust='du -sk * | sort -n | tail'
 alias shred='shred -z -n 2 -u'
 alias ssh='ssh -Y'
-# force tmux to start in 256-color mode
-alias tmux='tmux -2'
 alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
 # local IP@@
 alias lip='ip -s -h --color address show "${@}"'
@@ -135,6 +133,14 @@ alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 
 # stopwatch
 alias timer='echo "Timer started; stop with Ctrl-D." && date && time cat && date'
+
+# 'tmux -2' to start in 256-color mode
+# older versions of tmux can't use the -style options, and >= 2.9 must use them
+if (( $(echo "`tmux -V | cut -d ' ' -f 2 | sed 's/[^0-9\.]*//g'` <= 2.1" | bc -l) )); then
+    alias tmux='tmux -2 -f ~/.tmux-pre2.9.conf'
+else
+    alias tmux='tmux -2'
+fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
