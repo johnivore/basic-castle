@@ -110,10 +110,6 @@ alias cp='cp -i'
 alias crontab='crontab -i'
 alias more='less'
 alias df='df -h'
-alias du='du -h'
-alias dus='du -sk * | sort -n'
-alias dusdot='du -sk * .[a-zA-Z0-9]* | sort -n'
-alias dust='du -sk * | sort -n | tail'
 alias shred='shred -z -n 2 -u'
 alias ssh='ssh -Y'
 alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
@@ -141,6 +137,19 @@ if (( $(echo "`tmux -V | cut -d ' ' -f 2 | sed 's/[^0-9\.]*//g'` <= 2.1" | bc -l
 else
     alias tmux='tmux -2'
 fi
+
+alias du='du -h'
+# since coreutils 7.5, sort takes -h
+if (( $(echo "`sort --version | cut -d ' ' -f 4 | sed 's/[^0-9\.]*//g'` < 7.5" | bc -l) )); then
+    alias dus='du -sk * | sort -nr'
+    alias dusdot='du -sk * .[a-zA-Z0-9]* | sort -nr'
+    alias dustop='du -sk * | sort -n | head'
+else
+    alias dus='du -sh * | sort -hr'
+    alias dusdot='du -sh * .[a-zA-Z0-9]* | sort -hr'
+    alias dustop='du -sh * | sort -hr | head'
+fi
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
