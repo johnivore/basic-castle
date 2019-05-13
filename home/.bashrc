@@ -153,13 +153,15 @@ else
     alias dustop50='du -ah . | sort -hr | head -n 50'
     # largest 50 files
     alias duftop50='find . -type f -exec ls -lah {} + | sort -k5 -hr | head -n 50'
-
 fi
 
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# CDPATH shouldn't be a thing
+unset CDPATH
 
 # Go
 export GOPATH=~/.go
