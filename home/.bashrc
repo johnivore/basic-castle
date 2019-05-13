@@ -144,10 +144,16 @@ if (( $(echo "`sort --version | cut -d ' ' -f 4 | sed 's/[^0-9\.]*//g'` < 7.5" |
     alias dus='du -sk * | sort -nr'
     alias dusdot='du -sk * .[a-zA-Z0-9]* | sort -nr'
     alias dustop='du -sk * | sort -n | head'
+    alias dustop50='du -ak . | sort -nr | head -n 50'
 else
     alias dus='du -sh * | sort -hr'
     alias dusdot='du -sh * .[a-zA-Z0-9]* | sort -hr'
     alias dustop='du -sh * | sort -hr | head'
+    # largest 50 files & directories
+    alias dustop50='du -ah . | sort -hr | head -n 50'
+    # largest 50 files
+    alias duftop50='find . -type f -exec ls -lah {} + | sort -k5 -hr | head -n 50'
+
 fi
 
 
