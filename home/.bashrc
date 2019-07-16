@@ -135,9 +135,9 @@ alias timer='echo "Timer started; stop with Ctrl-D." && date && time cat && date
 # 'tmux -2' to start in 256-color mode
 # older versions of tmux can't use the -style options, and >= 2.9 must use them
 if (( $(echo "`tmux -V | cut -d ' ' -f 2 | sed 's/[^0-9\.]*//g'` <= 2.1" | bc -l) )); then
-    tmux_cmd='tmux -2 -f $HOME/.tmux-pre2.1.conf'
+    alias tmux='tmux -2 -f $HOME/.tmux-pre2.1.conf'
 else
-    tmux_cmd='tmux -2'
+    alias tmux='tmux -2'
 fi
 
 # share SSH sessions - see https://gist.github.com/admackin/4507371
@@ -145,8 +145,6 @@ fi
 #     ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh-auth-sock.$HOSTNAME"
 # }
 # alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; $tmux_cmd'
-
-alias tmux='$tmux_cmd'
 
 # --- end tmux ---
 
