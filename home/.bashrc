@@ -146,6 +146,8 @@ fi
 # }
 # alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; $tmux_cmd'
 
+alias tmux='$tmux_cmd'
+
 # --- end tmux ---
 
 
