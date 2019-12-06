@@ -12,6 +12,9 @@ set softtabstop=4   "Indent by 4 spaces when pressing <TAB>
 set showmatch           " Show matching brackets.
 "set number              " Show the line numbers on the left side.
 
+"pathogen
+execute pathogen#infect()
+
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 
