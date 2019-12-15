@@ -325,7 +325,6 @@ fs() {
     else
         local arg=-sh
     fi
-    # shellcheck disable=SC2199
     if [[ -n "$@" ]]; then
         du $arg -- "$@"
     else
