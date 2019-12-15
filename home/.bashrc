@@ -57,9 +57,10 @@ for option in autocd globstar; do
     shopt -s "$option" 2> /dev/null
 done
 
-# prefer neovim; else vim; else vi
+# neovim > vim > vi
 if [ -x "$(command -v nvim)" ]; then
     alias vi='nvim'
+    alias vim='nvim'
     export EDITOR=nvim
 elif [ -x "$(command -v vim)" ]; then
     alias vi='vim'
@@ -75,6 +76,8 @@ if [[ ! -e ~/.config/nvim/init.vim ]]; then
     mkdir -p ~/.config/nvim
     ln -s ~/.vimrc ~/.config/nvim/init.vim
 fi
+# ensure dirs required for pathogen exist
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 # ls colors for transparent terminal
 eval `dircolors -b $HOME/.dircolors`
