@@ -70,11 +70,14 @@ else
 fi
 export VISUAL=$EDITOR
 
-# symlink vimrc to neovim config
-if [[ ! -e ~/.config/nvim/init.vim ]]; then
-    echo "Symlinking ~/.config/nvim/init.vim → ~/.vimrc"
-    mkdir -p ~/.config/nvim
-    ln -s ~/.vimrc ~/.config/nvim/init.vim
+# to make vim and nvim to work with the same config:
+if [[ ! -e ~/.config/nvim ]]; then
+    echo "Symlinking ~/.config/nvim/ → ~/.vim/"
+    ln -s ~/.vim ~/.config/nvim
+fi
+if [[ ! -e ~/.vim/init.vim ]]; then
+    echo "Symlinking ~/.vim/init.vim → ~/.vimrc"
+    ln -s ~/.vimrc ~/.vim/init.vim
 fi
 # ensure dirs required for pathogen exist
 mkdir -p ~/.vim/autoload ~/.vim/bundle
