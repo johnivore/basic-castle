@@ -21,10 +21,10 @@ override_git_prompt_colors() {
     GIT_PROMPT_COMMAND_FAIL="${Red}✘"
 
     GIT_PROMPT_END_USER="${ResetColor}\$ "
-    GIT_PROMPT_END_ROOT="${BoldRed}# ${ResetColor}"
+    GIT_PROMPT_END_ROOT="${Red}# ${ResetColor}"
 
     GIT_PROMPT_START_USER="${DimGreen}\\u${ResetColor}@${DimYellow}\\h ${DimGreen}${PathShort}${ResetColor}"
-    GIT_PROMPT_START_ROOT="${BoldRed}\\u${ResetColor}@${DimYellow}\\h ${DimGreen}${PathShort}${ResetColor}"
+    GIT_PROMPT_START_ROOT="${Red}\\u${ResetColor}@${DimYellow}\\h ${DimGreen}${PathShort}${ResetColor}"
 }
 
 reload_git_prompt_colors "Custom"
