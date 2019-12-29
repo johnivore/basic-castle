@@ -15,6 +15,9 @@ override_git_prompt_colors() {
     GIT_PROMPT_SYMBOLS_NO_REMOTE_TRACKING="✭"
     GIT_PROMPT_BRANCH="${DimGreen}"
 
+    # Python
+    GIT_PROMPT_VIRTUALENV="(${DimGreen}_VIRTUALENV_${ResetColor}) ";
+
     # GIT_PROMPT_SYMBOLS_AHEAD=""
     GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0
 
