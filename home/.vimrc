@@ -1,3 +1,29 @@
+"pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+"Theme
+set background=dark
+colorscheme solarized8_flat
+
+"Airline
+set t_Co=256
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+"let g:airline_solarized_bg='dark'
+
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_flake8_args='--ignore=E501'
+set laststatus=2
+
 inoremap jk <ESC>
 
 let mapleader = "\<Space>"
@@ -11,9 +37,6 @@ set shiftwidth=4    "Indent by 4 spaces when using >>, <<, == etc.
 set softtabstop=4   "Indent by 4 spaces when pressing <TAB>
 set showmatch           " Show matching brackets.
 "set number              " Show the line numbers on the left side.
-
-"pathogen
-execute pathogen#infect()
 
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
