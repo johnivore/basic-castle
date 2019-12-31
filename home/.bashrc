@@ -170,6 +170,8 @@ else
     alias dustop50='du -ah . | sort -hr | head -n 50'
     # largest 50 files
     alias duftop50='find . -type f -exec ls -lah {} + | sort -k5 -hr | head -n 50'
+    # summary, excluding git
+    alias dusnogit='du -shc --exclude .git'
 fi
 
 
