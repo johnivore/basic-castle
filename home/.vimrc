@@ -1,6 +1,6 @@
 "pathogen
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect()
+execute pathogen#helptags()
 
 "Theme
 set background=dark
