@@ -35,9 +35,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # work around old versions of tmux not dealing with termite
-# [[ $TERM == xterm-termite ]] && export TERM=tmux-256color
-# I think we're happy using screen-256color everywhere
-#export TERM=screen-256color
+[[ $TERM == xterm-termite ]] && export TERM=screen-256color
 
 # history
 export HISTSIZE=10000
