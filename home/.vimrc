@@ -1,6 +1,3 @@
-"come on, vi
-set term=xterm-256color
-
 "pathogen
 execute pathogen#infect()
 execute pathogen#helptags()
