@@ -1,10 +1,31 @@
-"pathogen
-execute pathogen#infect()
-execute pathogen#helptags()
+"Plug
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+Plug 'mhartington/oceanic-next'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-syntastic/syntastic'
+
+call plug#end()
+
 
 "Theme
-set background=dark
-colorscheme solarized8_flat
+"set background=dark
+let g:airline_theme='oceanicnext'
+
+" OceanicNext
+" for vim 7
+"set t_Co=256
+syntax enable
+" for vim 8
+"if (has("termguicolors"))
+"    set termguicolors
+"endif
+colorscheme OceanicNext
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 
 "Airline
 set t_Co=256
