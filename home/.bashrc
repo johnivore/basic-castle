@@ -42,8 +42,11 @@ export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 
 # Don’t clear the screen after quitting a manual page
-export LESS='-g -i -M -R -S -w -X -z-4'
+export LESS='-g -i -M -R -S -w'
 [ -x /usr/bin/lesspipe ] && export LESSOPEN="|lesspipe %s"
+# with TERM == screen-256color, less uses stupid italics; fix that
+LESS_TERMCAP_so=$'\E[30;42m'
+
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
