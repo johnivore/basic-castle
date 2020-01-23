@@ -41,7 +41,7 @@ export LC_ALL="en_US.UTF-8"
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups
 
-# Don’t clear the screen after quitting a manual page
+# less - removed -X
 export LESS='-g -i -M -R -S -w'
 [ -x /usr/bin/lesspipe ] && export LESSOPEN="|lesspipe %s"
 # with TERM == screen-256color, less uses stupid italics; fix that
@@ -83,8 +83,6 @@ if [[ ! -e ~/.vim/init.vim ]]; then
     echo "Symlinking ~/.vim/init.vim → ~/.vimrc"
     ln -s ~/.vimrc ~/.vim/init.vim
 fi
-# ensure dirs required for pathogen exist
-mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 # ls colors for transparent terminal
 eval `dircolors -b $HOME/.dircolors`
