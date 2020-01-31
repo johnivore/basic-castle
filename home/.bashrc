@@ -86,9 +86,9 @@ fi
 
 # warn us if we still have pathogen, etc. installed
 # but don't clean up automatically
-if [[ -e ~/.vim/autoload/pathogen.vim ]]; then
-    printf "You might want to clean up pathogen, etc.:"
-    printf "  rm -rf ~/.vim/autoload/pathogen.vim ~/.vim/pack/themes/ ~/.vim/bundle/"
+if [[ -h ~/.vim/autoload/pathogen.vim ]]; then
+    printf "You might want to clean up pathogen, etc.:\n"
+    printf "    rm -rf ~/.vim/autoload/pathogen.vim ~/.vim/pack/themes/ ~/.vim/bundle/\n"
     printf "Then launch vim and run :PlugInstall"
 fi
 
