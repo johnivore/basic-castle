@@ -6,20 +6,15 @@
 # $HOME/.bash-local.sh can contain stuff not in git, or in another git repo
 for file in {/etc/profile,/etc/bashrc,$HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh},/usr/bin/virtualenvwrapper.sh,/usr/share/fzf/{key-bindings.bash,completion.bash},$HOME/.fzf-bash}; do
     if [[ -f "$file" ]]; then
-        echo "sourcing $file"
+        # echo "sourcing $file"
         source "$file"
     fi
 done
 unset file
 
 if [[ -d /usr/share/fzf ]]; then
+    # echo "sourcing fzf settings"
     source ~/.fzf-settings.bash
-fi
-
-# print a warning if our old-style ~/.bashrc_local exists
-if [[ -f $HOME/.bashrc_local ]]; then
-    echo "$HOME/.bashrc_local found.  Please do something like:"
-    echo "    mv $HOME/.bashrc_local $HOME/.bash-local.sh"
 fi
 
 # Append our default paths
@@ -50,7 +45,6 @@ export LESS='-g -i -M -R -S -w'
 [ -x /usr/bin/lesspipe ] && export LESSOPEN="|lesspipe %s"
 # with TERM == screen-256color, less uses stupid italics; fix that
 LESS_TERMCAP_so=$'\E[30;42m'
-
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
@@ -96,7 +90,7 @@ if [[ -h ~/.vim/autoload/pathogen.vim ]]; then
     printf "Then launch vim and run :PlugInstall\n"
 fi
 
-# ls colors for transparent terminal
+# ls colors
 eval `dircolors -b $HOME/.dircolors`
 
 # grep needs to complete successfully in order to test for --color=auto support
