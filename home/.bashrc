@@ -4,13 +4,17 @@
 # so everything is in here.
 
 # $HOME/.bash-local.sh can contain stuff not in git, or in another git repo
-for file in {/etc/profile,/etc/bashrc,$HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh},/usr/bin/virtualenvwrapper.sh,/usr/share/fzf/{key-bindings.bash,completion.bash}}; do
+for file in {/etc/profile,/etc/bashrc,$HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh},/usr/bin/virtualenvwrapper.sh,/usr/share/fzf/{key-bindings.bash,completion.bash},$HOME/.fzf-bash}; do
     if [[ -f "$file" ]]; then
-        # echo "sourcing $file"
+        echo "sourcing $file"
         source "$file"
     fi
 done
 unset file
+
+if [[ -d /usr/share/fzf ]]; then
+    source ~/.fzf-settings.bash
+fi
 
 # print a warning if our old-style ~/.bashrc_local exists
 if [[ -f $HOME/.bashrc_local ]]; then
