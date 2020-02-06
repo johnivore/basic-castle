@@ -82,12 +82,12 @@ if [[ ! -e ~/.vim/init.vim ]]; then
     ln -s ~/.vimrc ~/.vim/init.vim
 fi
 
-# warn us if we still have pathogen, etc. installed
+# warn us if we still have pathogen, etc. installed or aren't symlinking nvim to vim
 # but don't clean up automatically
-if [[ -h ~/.vim/autoload/pathogen.vim ]]; then
+if [[ -h ~/.vim/autoload/pathogen.vim ]] || [[ ! -h ~/.config/nvim ]]; then
     printf "You might want to clean up pathogen, etc.:\n\n"
-    printf "    rm -rf ~/.vim/autoload/pathogen.vim ~/.vim/pack/themes/ ~/.vim/bundle/\n\n"
-    printf "Then launch vim and run :PlugInstall\n"
+    printf "    rm -rf ~/.vim/autoload/pathogen.vim ~/.vim/pack/themes/ ~/.vim/bundle/ ~/.config/nvim\n\n"
+    printf "Then source ~/.bashrc again, launch vim and run :PlugInstall\n"
 fi
 
 # ls colors
