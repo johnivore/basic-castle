@@ -102,7 +102,8 @@ then
 fi
 
 # ls aliases
-alias ls='ls -F --color'
+# sort dotfiles first with LC_ALL="C"
+alias ls='LC_ALL="C" ls -F --color'
 alias l='ls'
 alias ll='ls -la'
 alias lst='ll --sort=t | head -20'
