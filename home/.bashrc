@@ -27,8 +27,9 @@ appendpath () {
     esac
 }
 
-appendpath '$HOME/bin'
-appendpath '~/.gem/ruby/2.6.0/bin/'
+appendpath "$HOME/bin"
+appendpath "$HOME/.gem/ruby/2.6.0/bin/"
+appendpath "$HOME/.local/bin"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
