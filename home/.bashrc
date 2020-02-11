@@ -47,6 +47,8 @@ export LESS='-g -i -M -R -S -w'
 # with TERM == screen-256color, less uses stupid italics; fix that
 LESS_TERMCAP_so=$'\E[30;42m'
 
+export SYSTEMD_LESS=FRXMK
+
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
