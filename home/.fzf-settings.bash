@@ -7,6 +7,7 @@
 export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# TODO: Arch only
 alias yay-fzf-install="yay -Slq | fzf -m --preview 'yay -Si {1}'| xargs -ro yay -S"
 
 # colors - see https://minsw.github.io/fzf-color-picker/
