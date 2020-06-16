@@ -13,3 +13,6 @@
 
 [alias]
     ci = commit
+
+[pull]
+	rebase = false
