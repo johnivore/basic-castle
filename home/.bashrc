@@ -148,6 +148,14 @@ alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 # stopwatch
 alias timer='echo "Timer started; stop with Ctrl-D." && date && time cat && date'
 
+# always forget how to format these
+c2f() {
+    units -v tempC\($1\) tempF
+}
+f2c() {
+    units -v tempF\($1\) tempC
+}
+
 # --- tmux ---
 
 # 'tmux -2' to start in 256-color mode
