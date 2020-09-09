@@ -131,7 +131,7 @@ alias df='df -h'
 alias shred='shred -z -n 2 -u'
 alias ssh='ssh -Y'
 alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
-# local IP@@
+# local IP
 alias lip='ip -s -h --color address show "${@}"'
 # external IP
 alias xip='curl https://icanhazip.com'
