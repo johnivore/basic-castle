@@ -16,7 +16,7 @@ set -g __fish_git_prompt_showupstream "informative"
 set -g __fish_git_prompt_showdirtystate "yes"
 set -g __fish_git_prompt_color_dirtystate A96000
 set -g __fish_git_prompt_color_stagedstate yellow
-set -g __fish_git_prompt_char_stagedstate ●
+set -g __fish_git_prompt_char_stagedstate '∙'
 set -g __fish_git_prompt_color_invalidstate red
 set -g __fish_git_prompt_color_cleanstate green
 set -g __fish_git_prompt_char_stateseparator ' '
