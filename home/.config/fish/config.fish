@@ -30,7 +30,7 @@ function fish_prompt
     if not test $last_status -eq 0
         set_color $fish_color_error
     end
-    echo -n '$ '
+    echo -n '❯ '
     set_color normal
 end
 
@@ -85,4 +85,3 @@ abbr xip 'curl https://icanhazip.com'
 # # copy working directory
 # alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 
-abbr t "task"
