@@ -93,9 +93,6 @@ if [[ -h ~/.vim/autoload/pathogen.vim ]] || [[ ! -h ~/.config/nvim ]]; then
     printf "Then source ~/.bashrc again, launch vim and run :PlugInstall\n"
 fi
 
-# ls colors
-eval `dircolors -b $HOME/.dircolors`
-
 # grep needs to complete successfully in order to test for --color=auto support
 if grep --color=auto "s" $HOME/.bash_profile &> /dev/null
 then
