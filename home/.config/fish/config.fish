@@ -61,13 +61,6 @@ end
 
 # TODO: vi/vim/nvim
 
-# # list only directories
-# if [[ -n $HAVE_COLORFUL_GREP ]]; then
-#     alias lsd="ls -lF --color | grep --color=never '^d'"
-# else
-#     alias lsd="ls -lF --color | grep '^d'"
-# fi
-
 abbr cp "cp -i"
 abbr mv "mv -i"
 abbr rm "rm -i"
@@ -80,17 +73,4 @@ abbr shred 'shred -z -n 2 -u'
 abbr lip 'ip -s -h --color address show'
 abbr xip 'curl https://icanhazip.com'
 
-# abbr ssh 'ssh -Y'
-
-# alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
-
-
-# # make aliases available to sudo
-# alias sudo='sudo '
-
-# # ED25519
-# alias ssh-keygen='ssh-keygen -t ed25519 -C "$(whoami)@$(hostname)-$(date -I)"'
-
-# # copy working directory
-# alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
-
+abbr ssh-keygen 'ssh-keygen -t ed25519 -C \"(whoami)@(hostname)-(date -I)\"'
