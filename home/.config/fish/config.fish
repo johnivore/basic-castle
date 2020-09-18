@@ -34,6 +34,15 @@ function fish_prompt
     set_color normal
 end
 
+# theme
+if test -d ~/.config/kitty/kitty-themes
+    if not test -e ~/.config/kitty/theme.conf
+        echo "Setting theme to one dark; to change theme, change symlink - see https://github.com/dexpota/kitty-themes"
+        echo "Restart kitty for theme to take effect"
+        ln -s ~/.config/kitty/kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
+    end
+end
+
 
 set -gx LANG 'en_US.UTF-8'
 set -gx LC_ALL 'en_US.UTF-8'
