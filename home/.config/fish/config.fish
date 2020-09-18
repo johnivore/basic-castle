@@ -9,6 +9,9 @@ if test -e ~/.homesick/repos/homeshick/homeshick.fish
     source ~/.homesick/repos/homeshick/homeshick.fish
 end
 
+set -g fish_color_search_match 'bryellow'  '--background=brblack'
+set -g fish_pager_color_progress 'cyan'  '--background=brblack'
+
 # git prompt - see https://fishshell.com/docs/current/cmds/fish_git_prompt.html
 set -g __fish_git_prompt_show_informative_status true
 set -g __fish_git_prompt_color_branch green
