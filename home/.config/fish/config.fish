@@ -77,3 +77,8 @@ abbr lip 'ip -s -h --color address show'
 abbr xip 'curl https://icanhazip.com'
 
 abbr ssh-keygen 'ssh-keygen -t ed25519 -C \"(whoami)@(hostname)-(date -I)\"'
+
+
+# fucking ads in npm
+set -g OPEN_SOURCE_CONTRIBUTOR true
+set -g export DISABLE_OPENCOLLECTIVE true

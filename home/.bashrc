@@ -278,6 +278,10 @@ else
     source ~/.bash-git-prompt/gitprompt.sh
 fi
 
+# fucking ads in npm
+export OPEN_SOURCE_CONTRIBUTOR=true
+export DISABLE_OPENCOLLECTIVE=true
+
 # --- cleanup ---
 unset HAVE_COLORFUL_GREP
 
