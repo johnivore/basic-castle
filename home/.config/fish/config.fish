@@ -3,6 +3,9 @@
 # disable prompt shortening
 set -g fish_prompt_pwd_dir_length 0
 
+# disable greeting
+set fish_greeting
+
 set PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
 
 if test -e ~/.homesick/repos/homeshick/homeshick.fish
@@ -81,4 +84,4 @@ abbr ssh-keygen 'ssh-keygen -t ed25519 -C \"(whoami)@(hostname)-(date -I)\"'
 
 # fucking ads in npm
 set -g OPEN_SOURCE_CONTRIBUTOR true
-set -g export DISABLE_OPENCOLLECTIVE true
+set -g DISABLE_OPENCOLLECTIVE true
