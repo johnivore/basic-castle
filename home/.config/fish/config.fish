@@ -62,6 +62,16 @@ else
 end
 set -g VISUAL $EDITOR
 
+# to make vim and nvim to work with the same config:
+if not test -e ~/.config/nvim
+    echo "Symlinking ~/.config/nvim/ → ~/.vim/"
+    ln -s ~/.vim ~/.config/nvim
+end
+if not test -e ~/.vim/init.vim
+    echo "Symlinking ~/.vim/init.vim → ~/.vimrc"
+    ln -s ~/.vimrc ~/.vim/init.vim
+end
+
 
 set -gx LANG 'en_US.UTF-8'
 set -gx LC_ALL 'en_US.UTF-8'
