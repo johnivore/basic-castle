@@ -49,6 +49,19 @@ if test -d ~/.config/kitty/kitty-themes
     end
 end
 
+# neovim > vim > vi
+if type -q nvim
+    alias vi 'nvim'
+    alias vim 'nvim'
+    set -g EDITOR nvim
+else if type -q vim
+    alias vi 'vim'
+    set -g EDITOR vim
+else
+    set -g EDITOR vi
+end
+set -g VISUAL $EDITOR
+
 
 set -gx LANG 'en_US.UTF-8'
 set -gx LC_ALL 'en_US.UTF-8'
@@ -56,16 +69,17 @@ set -gx LC_ALL 'en_US.UTF-8'
 set -gx LESS '-g -i -M -R -S -w'
 set -gx SYSTEMD_LESS 'FRXMK'
 
+# fucking ads in npm
+set -g OPEN_SOURCE_CONTRIBUTOR true
+set -g DISABLE_OPENCOLLECTIVE true
+
 if test -z (pgrep ssh-agent)
     echo "Initializing ssh-agent..."
     eval (ssh-agent -c)
     set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
     ssh-add
 end
-
-# TODO: vi/vim/nvim
 
 abbr cp "cp -i"
 abbr mv "mv -i"
@@ -80,8 +94,3 @@ abbr lip 'ip -s -h --color address show'
 abbr xip 'curl https://icanhazip.com'
 
 abbr ssh-keygen 'ssh-keygen -t ed25519 -C \"(whoami)@(hostname)-(date -I)\"'
-
-
-# fucking ads in npm
-set -g OPEN_SOURCE_CONTRIBUTOR true
-set -g DISABLE_OPENCOLLECTIVE true
