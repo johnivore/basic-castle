@@ -234,16 +234,16 @@ fi
 
 # if using systemd, enable ssh-agent via systemd
 # note, systemd --user is not in EL7, see https://bugs.centos.org/view.php?id=8767
-if [[ -L "/sbin/init" ]] && [[ ! -f /etc/redhat-release ]]; then
-    if [[ ! -f ~/.config/systemd/user/default.target.wants/ssh-agent.service ]]; then
-        echo "Enabling and starting ssh-agent..."
-        systemctl --user enable ssh-agent
-        systemctl --user start ssh-agent
-    fi
-    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
-else
-    alias sshagent='eval `ssh-agent -s` && ssh-add'
-fi
+# if [[ -L "/sbin/init" ]] && [[ ! -f /etc/redhat-release ]]; then
+#     if [[ ! -f ~/.config/systemd/user/default.target.wants/ssh-agent.service ]]; then
+#         echo "Enabling and starting ssh-agent..."
+#         systemctl --user enable ssh-agent
+#         systemctl --user start ssh-agent
+#     fi
+#     export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+# else
+alias sshagent='eval `ssh-agent -s` && ssh-add'
+# fi
 
 # git pager
 if [[ -e /usr/share/git/diff-highlight/diff-highlight ]]; then
