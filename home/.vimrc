@@ -3,7 +3,8 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
-Plug 'mhartington/oceanic-next'
+"Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'vim-syntastic/syntastic'
@@ -23,9 +24,12 @@ syntax enable
 "if (has("termguicolors"))
 "    set termguicolors
 "endif
-colorscheme OceanicNext
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+
+colorscheme onedark
+
+"colorscheme OceanicNext
+"let g:oceanic_next_terminal_bold = 1
+"let g:oceanic_next_terminal_italic = 1
 
 "Airline
 set t_Co=256
