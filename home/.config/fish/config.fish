@@ -60,7 +60,8 @@ else if type -q vim
 else
     set -g EDITOR vi
 end
-set -g VISUAL $EDITOR
+set -x VISUAL $EDITOR
+set -x GIT_EDITOR $EDITOR
 
 # to make vim and nvim to work with the same config:
 if not test -e ~/.config/nvim
