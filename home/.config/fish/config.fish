@@ -73,12 +73,26 @@ if not test -e ~/.vim/init.vim
     ln -s ~/.vimrc ~/.vim/init.vim
 end
 
-
 set -gx LANG 'en_US.UTF-8'
 set -gx LC_ALL 'en_US.UTF-8'
 
+# less
 set -gx LESS '-g -i -M -R -S -w'
 set -gx SYSTEMD_LESS 'FRXMK'
+set -x LESS_TERMCAP_mb (printf "\033[01;31m")
+set -x LESS_TERMCAP_md (printf "\033[01;31m")
+set -x LESS_TERMCAP_me (printf "\033[0m")
+set -x LESS_TERMCAP_se (printf "\033[0m")
+set -x LESS_TERMCAP_so (printf "\033[01;44;33m")
+set -x LESS_TERMCAP_ue (printf "\033[0m")
+set -x LESS_TERMCAP_us (printf "\033[01;32m")
+if test -e /usr/share/source-highlight/src-hilite-lesspipe.sh
+    # Debian has just gotta be different
+    set -x LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+else if test -e /usr/bin/src-hilite-lesspipe.sh
+    # Arch / CentOS
+    set -x LESSOPEN "| /usr/bin/src-hilite-lesspipe.sh %s"
+end
 
 # fucking ads in npm
 set -g OPEN_SOURCE_CONTRIBUTOR true
