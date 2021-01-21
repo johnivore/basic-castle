@@ -123,3 +123,6 @@ abbr ssh-keygen 'ssh-keygen -t ed25519 -C \"(whoami)@(hostname)-(date -I)\"'
 # older versions of tmux can't use the -style options, and >= 2.9 must use them
 bass export TMUX_CONF=`~/.local/bin/set-tmux-conf.sh`
 abbr tmux tmux -2 -f $TMUX_CONF
+
+# quick and dirty password generator
+abbr pwgen30 'pwgen -s 30 1'
