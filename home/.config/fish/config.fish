@@ -106,9 +106,9 @@ if test -z (pgrep ssh-agent)
     ssh-add
 end
 
-abbr cp "cp -i"
-abbr mv "mv -i"
-abbr rm "rm -i"
+abbr cp 'cp -i'
+abbr mv 'mv -i'
+abbr rm 'rm -i'
 
 abbr crontab 'crontab -i'
 abbr more 'less'
@@ -126,3 +126,7 @@ abbr tmux tmux -2 -f $TMUX_CONF
 
 # quick and dirty password generator
 abbr pwgen30 'pwgen -s 30 1'
+
+# don't create json files & shell scripts by default
+# default: -o sh:rmlint.sh -o pretty:stdout -o summary:stdout -o json:rmlint.json
+abbr rmlint 'rmlint -o pretty:stdout -o summary:stdout'
