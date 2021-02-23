@@ -113,6 +113,7 @@ abbr rm 'rm -i'
 abbr crontab 'crontab -i'
 abbr more 'less'
 abbr df 'df -h'
+abbr free 'free -h'
 abbr shred 'shred -z -n 2 -u'
 
 abbr lip 'ip -s -h --color address show'
