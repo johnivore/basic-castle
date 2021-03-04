@@ -98,7 +98,7 @@ end
 set -g OPEN_SOURCE_CONTRIBUTOR true
 set -g DISABLE_OPENCOLLECTIVE true
 
-if test -z (pgrep ssh-agent)
+if test -z (pgrep ssh-agent | head -1)
     echo "Initializing ssh-agent..."
     eval (ssh-agent -c)
     set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
