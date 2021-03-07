@@ -126,7 +126,7 @@ alias crontab='crontab -i'
 alias more='less'
 alias df='df -h'
 # docker and snaps really fuck up df
-alias dfd='df --type ext4 --type ext3 --type ext2 --type vfat --type iso9660 --type btrfs'
+alias dfd='df --type xfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660 --type btrfs'
 alias shred='shred -z -n 2 -u'
 alias ssh='ssh -Y'
 alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
