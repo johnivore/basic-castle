@@ -6,7 +6,12 @@ set -g fish_prompt_pwd_dir_length 0
 # disable greeting
 set fish_greeting
 
-set PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
+# go has its own stupid special place which is by default ~/go
+set -g GOPATH $HOME/.go
+
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $GOPATH/bin
 
 if test -e ~/.homesick/repos/homeshick/homeshick.fish
     source ~/.homesick/repos/homeshick/homeshick.fish
