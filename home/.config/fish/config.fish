@@ -9,9 +9,13 @@ set fish_greeting
 # go has its own stupid special place which is by default ~/go
 set -g GOPATH $HOME/.go
 
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path $GOPATH/bin
+contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
+contains $HOME/.cargo/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.cargo/bin
+contains $GOPATH/bin $fish_user_paths; or set -Ua fish_user_paths $GOPATH/bin
+# CentOS is stuck on an olf version, but in fish >= 3.2.0, you can do this:
+#   fish_add_path $HOME/.local/bin
+#   fish_add_path $HOME/.cargo/bin
+#   fish_add_path $GOPATH/bin
 
 if test -e ~/.homesick/repos/homeshick/homeshick.fish
     source ~/.homesick/repos/homeshick/homeshick.fish
