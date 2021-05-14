@@ -1,8 +1,5 @@
 # basic fish config
 
-# disable prompt shortening
-set -g fish_prompt_pwd_dir_length 0
-
 # disable greeting
 set fish_greeting
 
@@ -12,10 +9,13 @@ set -g GOPATH $HOME/.go
 contains $HOME/.local/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.local/bin
 contains $HOME/.cargo/bin $fish_user_paths; or set -Ua fish_user_paths $HOME/.cargo/bin
 contains $GOPATH/bin $fish_user_paths; or set -Ua fish_user_paths $GOPATH/bin
-# CentOS is stuck on an olf version, but in fish >= 3.2.0, you can do this:
+# CentOS is stuck on an old version, but in fish >= 3.2.0, you can do this:
 #   fish_add_path $HOME/.local/bin
 #   fish_add_path $HOME/.cargo/bin
 #   fish_add_path $GOPATH/bin
+
+# disable prompt shortening
+set -g fish_prompt_pwd_dir_length 0
 
 if test -e ~/.homesick/repos/homeshick/homeshick.fish
     source ~/.homesick/repos/homeshick/homeshick.fish
