@@ -140,3 +140,9 @@ abbr pwgen30 'pwgen -s 30 1'
 # don't create json files & shell scripts by default
 # default: -o sh:rmlint.sh -o pretty:stdout -o summary:stdout -o json:rmlint.json
 abbr rmlint 'rmlint -o pretty:stdout -o summary:stdout'
+
+# du aliases
+alias dusdot "du -sh * .* | sort -hr"
+alias dusnogit "du -shc --exclude .git"
+alias dustop "du -sh * | sort -hr | head"
+alias dustop50 "du -ah . | sort -hr | head -n 50"
