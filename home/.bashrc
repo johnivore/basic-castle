@@ -202,6 +202,9 @@ shopt -s checkwinsize
 # CDPATH shouldn't be a thing
 unset CDPATH
 
+# Docker
+export DOCKER_CLI_EXPERIMENTAL=enabled
+
 # Go
 export GOPATH=~/.go
 
