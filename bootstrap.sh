@@ -10,5 +10,5 @@ fi
 
 # install this castle
 if [ ! -d $HOME/.homesick/repos/basic-castle ]; then
-    homeshick clone https://gitlab.com/johnivore/basic-castle.git
+    homeshick clone https://github.com/johnivore/basic-castle.git
 fi
