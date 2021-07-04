@@ -16,7 +16,7 @@ Copy `bootstrap.sh` to the remote system and run it.
 
 If this is an Android system:
 
-    homeshick clone git@github.com:johnivore/basic-castle.git
+    homeshick clone https://github.com/johnivore/android-castle.git
 
 
 ## License
