@@ -33,9 +33,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
 set laststatus=2
 
-"Line numbers
-set nu
-
 inoremap jk <ESC>
 
 let mapleader = "\<Space>"
