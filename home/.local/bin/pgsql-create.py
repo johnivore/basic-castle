@@ -38,6 +38,7 @@ def main():
     password = result.stdout.decode().strip()
 
     print(f"CREATE ROLE {args.db} WITH LOGIN PASSWORD '{password}';")
+    print(f'CREATE DATABASE {args.db};')
     print(f'REVOKE CONNECT ON DATABASE {args.db} FROM PUBLIC;')
     print(f'GRANT CONNECT ON DATABASE {args.db} TO {args.db};')
     print(f'GRANT ALL PRIVILEGES ON DATABASE {args.db} TO {args.db};')
