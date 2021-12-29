@@ -14,6 +14,14 @@ contains $GOPATH/bin $fish_user_paths; or set -Ua fish_user_paths $GOPATH/bin
 #   fish_add_path $HOME/.cargo/bin
 #   fish_add_path $GOPATH/bin
 
+# plugins
+fundle plugin 'edc/bass'
+fundle plugin 'jorgebucaran/fisher'
+fundle plugin 'PatrickF1/fzf.fish'
+fundle plugin 'urbainvaes/fzf-marks'
+fundle plugin joseluisq/gitnow --url 'git@github.com:joseluisq/gitnow.git#tags/2.9.0'
+fundle init
+
 # disable prompt shortening
 set -g fish_prompt_pwd_dir_length 0
 
