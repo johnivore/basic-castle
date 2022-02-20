@@ -4,7 +4,13 @@
 # so everything is in here.
 
 # $HOME/.bash-local.sh can contain stuff not in git, or in another git repo
-for file in {/etc/profile,/etc/bashrc,$HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh},/usr/share/fzf/{key-bindings.bash,completion.bash},$HOME/.fzf-bash}; do
+for file in { \
+    /etc/profile, \
+    /etc/bashrc, \
+    $HOME/{.bash-dotfiles.sh,.bash-local.sh,.homesick/repos/homeshick/homeshick.sh}, \
+    /usr/share/fzf/{key-bindings.bash,completion.bash},$HOME/.fzf-bash}, \
+    $HOME/.local/bin/set-tmux-title.sh \
+    ; do
     if [[ -f "$file" ]]; then
         # echo "sourcing $file"
         source "$file"
