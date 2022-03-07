@@ -12,6 +12,16 @@ Copy `bootstrap.sh` to the remote system and run it.
     sh bootstrap.sh
 
 
+## fzf plugins
+
+    fundle plugin 'edc/bass'
+    fundle plugin 'jorgebucaran/fisher'
+    fundle plugin 'PatrickF1/fzf.fish'
+    fundle plugin 'urbainvaes/fzf-marks'
+    fundle plugin joseluisq/gitnow --url 'git@github.com:joseluisq/gitnow.git#tags/2.9.0'
+    fundle init
+
+
 ## Android
 
 If this is an Android system:
