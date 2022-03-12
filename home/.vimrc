@@ -6,7 +6,11 @@ let g:lightline = {
 colorscheme nord
 syntax on
 
-" lightline shows the mode on its bar
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+"lightline shows the mode on its bar
 set noshowmode
 
 inoremap jk <ESC>
