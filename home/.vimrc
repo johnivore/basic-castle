@@ -1,37 +1,13 @@
-"Plug
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'vim-syntastic/syntastic'
-
-call plug#end()
-
-
 "Theme
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'nord',
       \ }
 
-colorscheme onedark
+colorscheme nord
 syntax on
 
 " lightline shows the mode on its bar
 set noshowmode
-
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_flake8_args='--ignore=E501'
-set laststatus=2
 
 inoremap jk <ESC>
 

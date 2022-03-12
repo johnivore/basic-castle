@@ -12,6 +12,12 @@ Copy `bootstrap.sh` to the remote system and run it.
     sh bootstrap.sh
 
 
+## vim
+
+* <https://github.com/arcticicestudio/nord-vim>
+* <https://github.com/itchyny/lightline.vim>
+
+
 ## fzf plugins
 
     fundle plugin 'edc/bass'
