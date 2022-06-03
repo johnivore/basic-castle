@@ -135,6 +135,7 @@ alias df='df -h'
 # docker and snaps really fuck up df
 alias dfd='df --type xfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660 --type btrfs'
 alias shred='shred -z -n 2 -u'
+alias ssh='ssh -A'
 alias gitlog='git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%an]" --decorate --date=relative --abbrev-commit --abbrev=10 --graph'
 # local IP
 alias lip='ip -s -h --color address show "${@}"'
