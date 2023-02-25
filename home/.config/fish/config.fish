@@ -28,7 +28,7 @@ set -g fish_pager_color_progress 'cyan'  '--background=brblack'
 set -g __fish_git_prompt_show_informative_status true
 set -g __fish_git_prompt_color_branch green
 set -g __fish_git_prompt_showupstream "informative"
-set -g __fish_git_prompt_showdirtystate "yes"
+set -g __fish_git_prompt_showdirtystate "true"
 set -g __fish_git_prompt_color_dirtystate A96000
 set -g __fish_git_prompt_color_stagedstate yellow
 set -g __fish_git_prompt_char_stagedstate '∙'
@@ -36,6 +36,7 @@ set -g __fish_git_prompt_color_invalidstate red
 set -g __fish_git_prompt_color_cleanstate green
 set -g __fish_git_prompt_char_stateseparator ' '
 set -g __fish_git_prompt_char_upstream_prefix ' '
+set -g __fish_git_prompt_showuntrackedfiles 'true'
 set -g __fish_git_prompt_char_untrackedfiles ' '
 set -g __fish_git_prompt_color_untrackedfiles "red"
 # other colors
